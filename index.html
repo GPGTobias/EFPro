@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -47,6 +48,21 @@
                 opacity: 0;
             }
         }
+
+        .loading-circle {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f4e3ba;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -54,5 +70,7 @@
         Extra Family
         <span class="sparkle"></span>
     </h1>
+    <div class="loading-circle"></div>
+    <h1 class="coming-soon">Coming Soon</h1>
 </body>
 </html>
