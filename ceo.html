@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=description content=ceo • social tab>
+    <title>Extra Family</title>
+    <link rel="shortcut icon" href="src/images/extra.png">
+    <link rel="stylesheet" href="src/css/ceo.css">
+    <link rel="stylesheet" href="src/mouse-animate/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <script src="src/mouse-animate/main.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('../images/lxobg.gif');
+            background-size: cover;
+            filter: blur(10px);
+            transition: filter 0.5s ease;
+        }
+        #overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        #text {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        #viewCount {
+            font-size: 18px;
+            color: gray;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #ffffff;
+        }
+
+        .view-count-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .eye-icon {
+            font-size: 24px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 2px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay"></div>
+    <audio id="audio" src="src/images/tebe.mp3" loop></audio>
+    <script>
+        document.body.addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('audio').play();
+            document.body.style.filter = 'none';
+        });
+    </script>
+    <div id="loading-screen"><svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg></div>
+    <div class="wrap" rel="preload">
+        <div class="main-block">
+            <div class="profile unselectable">
+                <div class="profile-banner unselectable"></div>
+                <img src="https://lanyard.cnrad.dev/api/1078777985911496724?bg=00000500&idleMessage=Get%20rich%20or%20die%20trying.&animated=truehide&showDisplayName=true&hideBadges=false&hideStatus=false">
+            </div>
+            <p class="view-count-container">
+                <i class="ri-eye-2-fill eye-icon"></i>
+                <span id="viewCount"><i class="fas fa-eye"></i></span>
+            </p>
+            <div class="social-tab" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="links-block">
+                    <a target="_blank" href="https://discord.gg/uQw4YjWxb8"><img src="src/images/social/discord.png" class="unselectable"></a>
+                    <a target="_blank" href="https://www.roblox.com/users/1044924638/profile"><img src="src/images/social/roblox.png" class="unselectable"></a>
+                    <a target="_blank" href="https://open.spotify.com/user/315hslsk4xfn6g4opmmwcacjftq4?si=3824706da10b4018"><img src="src/images/social/spotify.png" class="unselectable"></a>
+                </div>
+            </div>
+            <div class="social-tab" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="links-block">
+                    <h2 class="text-[20px] text-white font-semibold unselectable" style="color: #fff; background-image: url('https://media.discordapp.net/attachments/987149728800198686/991834200309248070/sparkle.gif');filter: drop-shadow(8px 8px 10px #ff0000);color:#ff0000;">EXTRA FAMILY</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/jquery-3.6.0.js"></script>
+    <script src="src/js/loading.js"></script>
+    <script>
+        // Get the view count element
+        const viewCountElement = document.getElementById("viewCount");
+
+        // Retrieve the current view count from local storage or set it to 0
+        let viewCount = localStorage.getItem("viewCount");
+        if (!viewCount) {
+            viewCount = 0;
+        }
+
+        // Update the view count on the page
+        viewCountElement.textContent = viewCount;
+
+        // Disable incrementing the view count on page refresh
+        if (!localStorage.getItem("viewCountIncreased")) {
+            viewCount++;
+            localStorage.setItem("viewCount", viewCount.toString());
+            localStorage.setItem("viewCountIncreased", "true");
+        }
+    </script>
+</body>
+</html>
