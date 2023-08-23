@@ -61,6 +61,39 @@
             color: #ffffff;
         }
     </style>
+    <script>
+        function typeWriter(text, spanElement, delay) {
+            let index = 0;
+            const textLength = text.length;
+            const interval = setInterval(() => {
+                spanElement.textContent += text.charAt(index);
+                index++;
+                if (index === textLength) {
+                    clearInterval(interval);
+                }
+            }, delay);
+        }
+    
+        function startTypewriterLoop() {
+            const h2Element = document.querySelector(".typewriter-h2");
+            const textToType = "EXTRA FAMILY CEO";
+            const spanElement = document.createElement("span");
+            spanElement.classList.add("typed-text");
+            h2Element.innerHTML = "";
+            h2Element.appendChild(spanElement);
+    
+            typeWriter(textToType, spanElement, 150); // Adjust the delay to control typing speed
+    
+            setTimeout(() => {
+                spanElement.textContent = ""; // Clear the typed text
+                startTypewriterLoop(); // Start the loop again after 4 seconds
+            }, 6000); // 4 seconds
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            startTypewriterLoop();
+        });
+    </script>
 </head>
 <body>
     <div id="overlay"></div>
@@ -92,7 +125,7 @@
             </div>
             <div class="social-tab" style="display: flex; flex-direction: column; align-items: center;">
                 <div class="links-block">
-                    <h2 class="text-[20px] text-white font-semibold unselectable" style="color: #fff; background-image: url('https://media.discordapp.net/attachments/987149728800198686/991834200309248070/sparkle.gif');filter: drop-shadow(8px 8px 10px #ff0000);color:#ff0000;">EXTRA FAMILY</h2>
+                    <h2 class="text-[20px] text-white font-semibold unselectable typewriter-h2" style="color: #fff; background-image: url('https://media.discordapp.net/attachments/987149728800198686/991834200309248070/sparkle.gif');filter: drop-shadow(8px 8px 10px #0077ff);color:#0077ff;">EXTRA FAMILY CEO</h2>
                 </div>
             </div>
         </div>
