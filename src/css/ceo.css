@@ -28,7 +28,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../images/tebebg.jpg);
+    background-image: url(../images/tebeb.gif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -84,7 +84,7 @@ html {
 
 .profile-banner {
     position: absolute;
-    background: url(../images/decrypt.gif);
+    background: url(../images/tebebg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
