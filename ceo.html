@@ -97,7 +97,7 @@
 </head>
 <body>
     <div id="overlay"></div>
-    <audio id="audio" src="src/images/tebe.mp3" loop></audio>
+    <audio id="audio" src="src/images/tebebebe.mp3" loop></audio>
     <script>
         document.body.addEventListener('click', function() {
             document.getElementById('overlay').style.display = 'none';
@@ -114,7 +114,7 @@
             </div>
             <p class="view-count-container">
                 <i class="ri-eye-2-fill eye-icon"></i>
-                <span id="viewCount"><i class="fas fa-eye"></i></span>
+                <span id="viewCount"><i>69</i></span>
             </p>
             <div class="social-tab" style="display: flex; flex-direction: column; align-items: center;">
                 <div class="links-block">
@@ -132,25 +132,5 @@
     </div>
     <script src="src/js/jquery-3.6.0.js"></script>
     <script src="src/js/loading.js"></script>
-    <script>
-        // Get the view count element
-        const viewCountElement = document.getElementById("viewCount");
-
-        // Retrieve the current view count from local storage or set it to 0
-        let viewCount = localStorage.getItem("viewCount");
-        if (!viewCount) {
-            viewCount = 0;
-        }
-
-        // Update the view count on the page
-        viewCountElement.textContent = viewCount;
-
-        // Disable incrementing the view count on page refresh
-        if (!localStorage.getItem("viewCountIncreased")) {
-            viewCount++;
-            localStorage.setItem("viewCount", viewCount.toString());
-            localStorage.setItem("viewCountIncreased", "true");
-        }
-    </script>
 </body>
 </html>
