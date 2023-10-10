@@ -264,3 +264,31 @@ html {
     user-select: none;
     pointer-events: none
 }
+
+@media screen and (max-width: 1200px){
+    .profile{
+        width: 100%;
+        height: auto;
+    }
+    .profile-banner{
+        width: 100%;
+        height: 100px;
+    }
+    .main-block {
+        position: relative;
+        margin: auto;
+        width: 400px;
+        border-radius: 10px
+    }
+    .links-block {
+        align-content: space-between;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+    }
+    .profile img {
+        min-width: auto;
+        margin: auto;
+    }
+    
+}
